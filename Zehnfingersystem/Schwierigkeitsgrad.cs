@@ -8,6 +8,6 @@ namespace Zehnfingersystem
 {
     class Schwierigkeitsgrad
     {
-
+        
     }
 }
