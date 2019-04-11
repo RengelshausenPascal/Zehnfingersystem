@@ -8,15 +8,37 @@ namespace Zehnfingersystem
 {
     class LogIn : MainWindow
     {
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public string Passwort { get; set; }
+        private string  username;
+        public string Username
+        {
+            get { return username; }
+            set { username = value; }
+        }
+
+        private string email;
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
+        }
+
+        private string passwort;
+        public string Passwort
+        {
+            get { return passwort; }
+            set { passwort = value; }
+        }
 
         public void Daten()
         {
-            Username = username.Text;
-            Email = email.Text;
-            Passwort = passwort.Text;
+            Username = name.Text;
+            Email = textBox_email.Text;
+            Passwort = textBox_passwort.Text;
         }
+
+     
+
+
+
     }
 }

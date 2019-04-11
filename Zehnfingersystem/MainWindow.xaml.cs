@@ -25,12 +25,16 @@ namespace Zehnfingersystem
             InitializeComponent();
         }
 
+        static public Window1 w1;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Window1 Win = new Window1();
-            Win.Show();
+            w1 = new Window1(name.Text);
+            w1.Show();
             Close();
             
         }
+       
+
+        
     }
 }

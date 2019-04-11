@@ -19,13 +19,22 @@ namespace Zehnfingersystem
     /// </summary>
     public partial class Window1 :Window
     {
+        private LogIn user;
+
         public Window1()
         {
             
             InitializeComponent();
         }
-        
-        
+
+
+        public Window1(string usn)
+        {
+            InitializeComponent();
+            user = new LogIn() {Username = usn, };
+            lbl_username.Content = user.Username;
+
+        }
 
     }
 }
