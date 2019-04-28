@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Zehnfingersystem.LogIn;
 
 namespace Zehnfingersystem
 {
@@ -26,15 +27,19 @@ namespace Zehnfingersystem
         }
 
         static public Window1 w1;
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            w1 = new Window1(name.Text);
+            w1 = new Window1(name.Text, textBox_email.Text, textBox_passwort.Password);
             w1.Show();
+            //MessageBox.Show(textBox_email.Text,textBox_passwort.Password);
             Close();
             
         }
-       
 
-        
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(textBox_passwort.Password);
+        }
     }
 }
