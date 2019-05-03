@@ -58,6 +58,13 @@ namespace Zehnfingersystem
             w1.Show();
 
             Close();
+            
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(textBox_passwort.Password);
+        }
         }
 
         private void btn_Login_Click(object sender, RoutedEventArgs e)

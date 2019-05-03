@@ -25,14 +25,20 @@ namespace Zehnfingersystem
         {
             
             InitializeComponent();
+            
         }
 
 
-        public Window1(string usn)
+        public Window1(string usn,string em,string pass)
         {
+
             InitializeComponent();
-            user = new LogIn() {Username = usn, };
+            user = new LogIn() {Username = usn, Email=em, Passwort=pass};
             lbl_username.Content = user.Username;
+
+            text_ausgeben txtAusegeben = new text_ausgeben();
+            txtAusegeben.auslesen();
+            txtBlock.Text = txtAusegeben.ausgabe;
 
         }
 
