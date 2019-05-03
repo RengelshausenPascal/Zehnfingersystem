@@ -29,6 +29,7 @@ namespace Zehnfingersystem
             set { passwort = value; }
         }
 
+        /*
         public void Daten()
         {
             Username = name.Text;
@@ -36,7 +37,9 @@ namespace Zehnfingersystem
             Passwort = textBox_passwort.Password;
            
         }
-     
+        */
+
+
 
 
 
