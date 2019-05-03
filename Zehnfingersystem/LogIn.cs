@@ -40,6 +40,7 @@ namespace Zehnfingersystem
         {
             Regex pswdregex = new Regex(@"^.*(?=.{4,10})(?=.*\d)(?=.*[a-zA-Z]).*$");
             if (pswdregex.Match(Passwort).Success)
+
             {
                 System.Diagnostics.Debug.WriteLine("passt");
                 
