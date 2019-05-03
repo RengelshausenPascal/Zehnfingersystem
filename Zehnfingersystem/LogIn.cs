@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Zehnfingersystem
 {
-    class LogIn : MainWindow
+    class LogIn
     {
         private string  username;
         public string Username
@@ -22,8 +23,8 @@ namespace Zehnfingersystem
             set { email = value; }
         }
 
-        private string passwort;
-        public string Passwort
+        private static string passwort;
+        public static string Passwort
         {
             get { return passwort; }
             set { passwort = value; }
@@ -31,12 +32,24 @@ namespace Zehnfingersystem
 
         public void Daten()
         {
-            Username = name.Text;
-            Email = textBox_email.Text;
-            Passwort = textBox_passwort.Text;
+
+            
         }
 
-     
+        public static void PasswordConditions()
+        {
+            Regex pswdregex = new Regex(@"^.*(?=.{4,10})(?=.*\d)(?=.*[a-zA-Z]).*$");
+            if (pswdregex.Match(Passwort).Success)
+            {
+                System.Diagnostics.Debug.WriteLine("passt");
+                
+            }
+            else
+                System.Diagnostics.Debug.WriteLine("passt nicht");
+        }
+
+
+
 
 
 

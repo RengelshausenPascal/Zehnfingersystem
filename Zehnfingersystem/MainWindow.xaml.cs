@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Zehnfingersystem
 {
@@ -26,15 +27,51 @@ namespace Zehnfingersystem
         }
 
         static public Window1 w1;
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+
+        //    w1 = new Window1(name.Text);
+        //    w1.Show();
+            
+        //    Close();
+            
+        //}
+
+        private void btn_Registrieren_Click(object sender, RoutedEventArgs e)
         {
+            using (StreamWriter objWriter = new StreamWriter("test.txt", true))
+            {
+                objWriter.Write(name.Text,";");
+                objWriter.Write(textBox_email.Text,";");
+                objWriter.Write(pswdbox_passwort.Password,";");
+                
+
+                MessageBox.Show("Login Daten wurden gespeichert");
+
+                
+            }
+            LogIn.Passwort = pswdbox_passwort.Password;
+            LogIn.PasswordConditions();
             w1 = new Window1(name.Text);
             w1.Show();
-            Close();
-            
-        }
-       
 
-        
+            Close();
+        }
+
+        private void btn_Login_Click(object sender, RoutedEventArgs e)
+        {
+
+            using (StreamReader objReader = new StreamReader("test.txt"))
+            {
+
+            }
+
+            w1 = new Window1(name.Text);
+            w1.Show();
+
+            Close();
+        }
     }
 }
