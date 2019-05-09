@@ -9,7 +9,8 @@
     <Grid>
         <Label x:Name="lbl_username" Content="USERNAME" HorizontalAlignment="Left" Margin="27,23,0,0" VerticalAlignment="Top" Width="133" Height="39" FontSize="18"/>
         <TextBlock x:Name="txtBlock" HorizontalAlignment="Left" Height="130" Margin="10,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="760"/>
-        <TextBox Name="txtBox" HorizontalAlignment="Left" Height="125" Margin="9,252,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="774"/>
+        <TextBox x:Name="txtBox" HorizontalAlignment="Left" Height="125" Margin="9,252,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="774"/>
+        <Label x:Name="lblZeit" Content="" HorizontalAlignment="Left" Height="36" Margin="728,10,0,0" VerticalAlignment="Top" Width="42"/>
 
     </Grid>
 </Window>
