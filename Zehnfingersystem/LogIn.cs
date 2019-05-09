@@ -32,10 +32,7 @@ namespace Zehnfingersystem
 
         public void Daten()
         {
-            
-            Username = name.Text;
-            Email = textBox_email.Text;
-            Passwort = textBox_passwort.Password;
+           
 
 
 

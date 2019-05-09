@@ -33,7 +33,7 @@ namespace Zehnfingersystem
         {
 
             InitializeComponent();
-            user = new LogIn() {Username = usn, Email=em, Passwort=pass};
+            user = new LogIn() {Username = usn, Email=em, Password=pass};
             lbl_username.Content = user.Username;
 
             text_ausgeben txtAusegeben = new text_ausgeben();
