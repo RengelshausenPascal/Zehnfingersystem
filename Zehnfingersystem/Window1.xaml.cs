@@ -36,7 +36,8 @@ namespace Zehnfingersystem
         {
 
             InitializeComponent();
-            user = new LogIn() { Username = usn, Email = em, Passwort = pass };
+
+            user = new LogIn() { Username = usn, Email = em,  Passwort = pass };
             lbl_username.Content = user.Username;
 
             text_ausgeben txtAusgeben = new text_ausgeben();
@@ -69,6 +70,7 @@ namespace Zehnfingersystem
         int i = 4;
         private void Dp2_Tick(object sender, EventArgs e)
         {
+            
             lblZeit.Content = Convert.ToString(i);
             i--;
         }

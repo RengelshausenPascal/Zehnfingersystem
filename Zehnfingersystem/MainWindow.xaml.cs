@@ -52,9 +52,10 @@ namespace Zehnfingersystem
 
                 
             }
-            LogIn.Passwort = textBox_passwort.Password;
+            LogIn lg = new LogIn();
+            lg.Passwort = textBox_passwort.Password;
             LogIn.PasswordConditions();
-            w1 = new Window1(name.Text);
+            w1 = new Window1();
             w1.Show();
 
             Close();
@@ -75,10 +76,11 @@ namespace Zehnfingersystem
 
             }
 
-            w1 = new Window1(name.Text);
+            w1 = new Window1();
             w1.Show();
 
             Close();
         }
+
     }
 }

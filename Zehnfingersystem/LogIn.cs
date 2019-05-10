@@ -23,14 +23,14 @@ namespace Zehnfingersystem
             set { email = value; }
         }
 
-        private static string passwort;
-        public static string Passwort
+        private string passwort;
+        public string Passwort
         {
             get { return passwort; }
             set { passwort = value; }
         }
 
-        /*
+        
         public void Daten()
         {
            
@@ -42,8 +42,9 @@ namespace Zehnfingersystem
 
         public static void PasswordConditions()
         {
+            LogIn lg = new LogIn();
             Regex pswdregex = new Regex(@"^.*(?=.{4,10})(?=.*\d)(?=.*[a-zA-Z]).*$");
-            if (pswdregex.Match(Passwort).Success)
+            if (pswdregex.Match(lg.Passwort).Success)
 
             {
                 System.Diagnostics.Debug.WriteLine("passt");
