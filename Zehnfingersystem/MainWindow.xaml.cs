@@ -45,16 +45,17 @@ namespace Zehnfingersystem
             {
                 objWriter.Write(name.Text,";");
                 objWriter.Write(textBox_email.Text,";");
-                objWriter.Write(pswdbox_passwort.Password,";");
+                objWriter.Write(textBox_passwort.Password,";");
                 
 
                 MessageBox.Show("Login Daten wurden gespeichert");
 
                 
             }
-            LogIn.Passwort = pswdbox_passwort.Password;
+            LogIn lg = new LogIn();
+            lg.Passwort = textBox_passwort.Password;
             LogIn.PasswordConditions();
-            w1 = new Window1(name.Text);
+            w1 = new Window1();
             w1.Show();
 
             Close();
@@ -65,7 +66,7 @@ namespace Zehnfingersystem
         {
             MessageBox.Show(textBox_passwort.Password);
         }
-        }
+        
 
         private void btn_Login_Click(object sender, RoutedEventArgs e)
         {
@@ -75,10 +76,11 @@ namespace Zehnfingersystem
 
             }
 
-            w1 = new Window1(name.Text);
+            w1 = new Window1();
             w1.Show();
 
             Close();
         }
+
     }
 }
