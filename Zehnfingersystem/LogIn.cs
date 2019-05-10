@@ -56,7 +56,7 @@ namespace Zehnfingersystem
                 System.Diagnostics.Debug.WriteLine("passt nicht");
         }
 
-     
+     */
 
 
 

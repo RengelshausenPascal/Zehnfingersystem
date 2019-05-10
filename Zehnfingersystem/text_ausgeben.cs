@@ -9,7 +9,7 @@ using System.Windows.Threading;
 
 namespace Zehnfingersystem
 {
-    class text_ausgeben
+    class text_ausgeben:Window1
     {
         /*
         public string ausgabe;
@@ -24,21 +24,26 @@ namespace Zehnfingersystem
 
         //public string[] readText = File.ReadAllLines(@"text_ausgabe.txt");
 
-        
-        
-         public string ausgabe;
 
-         public string auslesen()
+
+
+    /*
+        DispatcherTimer dp = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 5) };
+
+        public string[] ausgabe = new string[] { };
+        //public string ausgabe;
+        public string auslesen(int zahl)
          {
             
             using (StreamReader sr = new StreamReader(@"text_ausgabe.txt"))
              {
                  string inhalt;
-                 while ((inhalt = sr.ReadToEnd()) != null)
+                 if((inhalt = sr.ReadLine()) != null)
                  {
-                     string[] zeile = inhalt.Split('%');
-                     ausgabe=zeile[0];
-                     return ausgabe;
+                    ausgabe = inhalt.Split(' ');
+                     //ausgabe=zeile[0];
+                     
+                     txtBlock.Text=ausgabe[zahl];
                  }
                 
              }
@@ -46,7 +51,7 @@ namespace Zehnfingersystem
             return "";
        
          }
-      
+      */
        
         /*
         int punkte = 0;
