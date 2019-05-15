@@ -40,21 +40,34 @@ namespace Zehnfingersystem
             
         }
 
-        public static void PasswordConditions()
+        public bool PasswordConditions()
         {
-            LogIn lg = new LogIn();
+            
             Regex pswdregex = new Regex(@"^.*(?=.{4,10})(?=.*\d)(?=.*[a-zA-Z]).*$");
-            if (pswdregex.Match(lg.Passwort).Success)
+            if (pswdregex.Match(Passwort).Success)
 
             {
-                System.Diagnostics.Debug.WriteLine("passt");
+                //System.Diagnostics.Debug.WriteLine("passt");
+                return true;
                 
             }
             else
-                System.Diagnostics.Debug.WriteLine("passt nicht");
+                //System.Diagnostics.Debug.WriteLine("passt nicht");
+                return false;
         }
 
-     */
+        public bool LogInConditions()
+        {
+            if (Email.Contains("@") == true || Email.Length != 0 || Username.Length != 0)
+            {
+                return true;
+            }
+            else
+                return false;
+            
+        }
+
+     
 
 
 

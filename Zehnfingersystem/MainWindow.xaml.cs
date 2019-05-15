@@ -43,23 +43,34 @@ namespace Zehnfingersystem
         {
             using (StreamWriter objWriter = new StreamWriter("test.txt", true))
             {
-                objWriter.Write(name.Text,";");
-                objWriter.Write(textBox_email.Text,";");
-                objWriter.Write(textBox_passwort.Password,";");
+                objWriter.Write(name.Text+";");
+                objWriter.Write(textBox_email.Text+";");
+                objWriter.Write(textBox_passwort.Password+";\n");
                 
 
-                MessageBox.Show("Login Daten wurden gespeichert");
+                
 
                 
             }
             LogIn lg = new LogIn();
             lg.Passwort = textBox_passwort.Password;
-            LogIn.PasswordConditions();
-            w1 = new Window1();
-            w1.Show();
+            lg.Username = name.Text;
+            lg.Email = textBox_email.Text;
+            if (lg.PasswordConditions() == true && lg.LogInConditions() == true)
+            {
+                w1 = new Window1();
+                w1.Show();
 
-            Close();
+                Close();
+            }
+            else if(lg.PasswordConditions() == false)
+                MessageBox.Show("Das Passwort muss mindestens aus 4-10 Zeichen, einer Zahl und einem Groß- oder Kleinbuchstaben bestehen!");
+
             
+            else if (lg.LogInConditions() == false)
+            {
+                MessageBox.Show("Die Felder müssen korrekt ausgefüllt werden!");
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
