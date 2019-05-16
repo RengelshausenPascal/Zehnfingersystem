@@ -25,36 +25,44 @@ namespace Zehnfingersystem
 
         public Window1()
         {
-            InitializeComponent();
-        }
-
-        public Window1(string usn, string em, string pass)
-        {
 
             InitializeComponent();
 
-            user = new LogIn() { Username = usn, Email = em,  Passwort = pass };
+            user = new LogIn() { Username = user.Username, Email = user.Email,  Passwort = user.Passwort };
             lbl_username.Content = user.Username;
-           
 
-            text_ausgeben txtAusgeben = new text_ausgeben();
-            txtAusgeben.auslesen();
+            //text_ausgeben txtAusgeben = new text_ausgeben();
+            //txtAusgeben.auslesen();
             //txtBlock.Text = txtAusgeben.ausgabe;
 
-            //string[] txtEinlesen = txtBox.Text.Split(' ');
             //string[] txtAusgabe =txtAusgeben.ausgabe.Split(' ') ;
 
-            dp.Start();
+            auslesen();
+            einlesen();
+
+            dp.Start(); //dispatcher Timer wird gestartet
             //dp2.Start();
             //dp2.Tick += Dp2_Tick;
+
             dp.Tick += Dp_Tick;
 
         }
 
+        //Window1 w1 = new Window1();
+
         DispatcherTimer dp = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 5) };
 
+        public string[] einlesen()
+        {
+            string[] txtEinlesen = txtBox.Text.Split(' ');
+
+            return txtEinlesen;
+        }
+
+
         public string[] ausgabe = new string[] { };
-        int zahl = 0;
+        int zeile = 0;
+
         public string auslesen()
         {
             using (StreamReader sr = new StreamReader(@"text_ausgabe.txt"))
@@ -65,30 +73,49 @@ namespace Zehnfingersystem
                     ausgabe = inhalt.Split(' ');
                     //ausgabe=zeile[0];
 
-                    txtBlock.Text = ausgabe[zahl];
+                    txtBlock.Text = ausgabe[zeile];
                 }
-
             }
 
             return "";
 
         }
 
-        //DispatcherTimer dp = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 5) };
-        //DispatcherTimer dp2 = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 1) }; //Countdown
 
         private void Dp_Tick(object sender, EventArgs e)
         {         
-            zahl++;
+            zeile++;
             //dp2.Stop();       
         }
 
         int i = 4;
         private void Dp2_Tick(object sender, EventArgs e)
-        {
-            
+        {  
             lblZeit.Content = Convert.ToString(i);
             i--;
         }
+
+        int fehler = 0;
+        int punkte = 0;
+       
+        /*
+        private void txtBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            for (int i = 0; i < einlesen().Length; i++)
+            {
+                //ausgabe[].IndexOf()
+                if (einlesen()[i] ==(ausgabe[i]))
+                {
+                    punkte++;
+                }
+
+                else
+                {
+                    fehler++;
+                }
+            }
+
+        }
+        */
     }
 }
