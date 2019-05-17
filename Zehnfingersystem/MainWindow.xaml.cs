@@ -58,7 +58,7 @@ namespace Zehnfingersystem
             lg.Email = textBox_email.Text;
             if (lg.PasswordConditions() == true && lg.LogInConditions() == true)
             {
-                w1 = new Window1();
+                w1 = new Window1(name.Text);
                 w1.Show();
 
                 Close();
@@ -87,7 +87,7 @@ namespace Zehnfingersystem
 
             }
 
-            w1 = new Window1();
+            w1 = new Window1(name.Text);
             w1.Show();
 
             Close();

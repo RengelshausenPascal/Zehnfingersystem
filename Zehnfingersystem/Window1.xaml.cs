@@ -21,15 +21,14 @@ namespace Zehnfingersystem
     /// </summary>
     public partial class Window1 : Window
     {
-        private LogIn user;
+        //private LogIn user;
 
-        public Window1()
+      
+        public Window1(string namee)
         {
 
             InitializeComponent();
-
-            user = new LogIn() { Username = user.Username, Email = user.Email,  Passwort = user.Passwort };
-            lbl_username.Content = user.Username;
+            lbl_username.Content = namee;
 
             //text_ausgeben txtAusgeben = new text_ausgeben();
             //txtAusgeben.auslesen();
@@ -41,16 +40,16 @@ namespace Zehnfingersystem
             einlesen();
 
             dp.Start(); //dispatcher Timer wird gestartet
-            //dp2.Start();
-            //dp2.Tick += Dp2_Tick;
-
+            
             dp.Tick += Dp_Tick;
+            dp2.Tick += Dp2_Tick;
 
         }
 
         //Window1 w1 = new Window1();
 
         DispatcherTimer dp = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 5) };
+        DispatcherTimer dp2 = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 5) };
 
         public string[] einlesen()
         {
@@ -70,17 +69,16 @@ namespace Zehnfingersystem
                 string inhalt;
                 if ((inhalt = sr.ReadLine()) != null)
                 {
-                    ausgabe = inhalt.Split(' ');
+                    ausgabe = inhalt.Split( '%' );
                     //ausgabe=zeile[0];
-
                     txtBlock.Text = ausgabe[zeile];
+                    //txtBlock.Text = ausgabe[zeile];
                 }
             }
 
             return "";
 
         }
-
 
         private void Dp_Tick(object sender, EventArgs e)
         {         
@@ -98,7 +96,7 @@ namespace Zehnfingersystem
         int fehler = 0;
         int punkte = 0;
        
-        /*
+        
         private void txtBox_KeyDown(object sender, KeyEventArgs e)
         {
             for (int i = 0; i < einlesen().Length; i++)
@@ -116,6 +114,6 @@ namespace Zehnfingersystem
             }
 
         }
-        */
+        
     }
 }
