@@ -64,7 +64,7 @@ namespace Zehnfingersystem
 
         public string auslesen()
         {
-            using (StreamReader sr = new StreamReader(@"text_ausgabe.txt"))
+            using (StreamReader sr = new StreamReader(@"..\..\text_ausgabe.txt"))
             {
                 string inhalt;
                 if ((inhalt = sr.ReadLine()) != null)
