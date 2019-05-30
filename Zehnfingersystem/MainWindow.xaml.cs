@@ -34,23 +34,23 @@ namespace Zehnfingersystem
 
         //    w1 = new Window1(name.Text);
         //    w1.Show();
-            
+
         //    Close();
-            
+
         //}
 
         private void btn_Registrieren_Click(object sender, RoutedEventArgs e)
         {
-            using (StreamWriter objWriter = new StreamWriter("test.txt", true))
+            using (StreamWriter objWriter = new StreamWriter(@"..\..\test.txt", true))
             {
-                objWriter.Write(name.Text+";");
-                objWriter.Write(textBox_email.Text+";");
-                objWriter.Write(textBox_passwort.Password+";\n");
-                
+                objWriter.Write(name.Text + ";");
+                objWriter.Write(textBox_email.Text + ";");
+                objWriter.Write(textBox_passwort.Password);
+                objWriter.WriteLine();
 
-                
 
-                
+
+
             }
             LogIn lg = new LogIn();
             lg.Passwort = textBox_passwort.Password;
@@ -63,10 +63,10 @@ namespace Zehnfingersystem
 
                 Close();
             }
-            else if(lg.PasswordConditions() == false)
+            else if (lg.PasswordConditions() == false)
                 MessageBox.Show("Das Passwort muss mindestens aus 4-10 Zeichen, einer Zahl und einem Groß- oder Kleinbuchstaben bestehen!");
 
-            
+
             else if (lg.LogInConditions() == false)
             {
                 MessageBox.Show("Die Felder müssen korrekt ausgefüllt werden!");
@@ -77,22 +77,50 @@ namespace Zehnfingersystem
         {
             MessageBox.Show(textBox_passwort.Password);
         }
-        
 
-        
+
+
 
         private void btn_Login_Click(object sender, RoutedEventArgs e)
         {
 
-            using (StreamReader objReader = new StreamReader("test.txt"))
+            StreamReader objReader = new StreamReader(@"..\..\test.txt");
+
+
+            string[] lines = File.ReadAllLines(@"..\..\test.txt");
+            int counter = 0;
+
+            while (objReader.EndOfStream == false)
             {
 
+                string line = objReader.ReadLine();
+                string[] LogInFelder = line.Split(';');
+
+
+
+                if (name.Text == LogInFelder[0] && textBox_passwort.Password == LogInFelder[2])
+                {
+                    counter++;
+                    w1 = new Window1(name.Text);
+                    w1.Show();
+
+                    Close();
+                    objReader.ReadToEnd();
+                    break;
+                }
             }
-
-            w1 = new Window1(name.Text);
-            w1.Show();
-
-            Close();
+            if (counter == 0)
+            {
+                foreach (var item in lines)
+                {
+                    string[] Felder = item.Split(';');
+                    if (name.Text != Felder[0] || textBox_passwort.Password != Felder[2])
+                    {
+                        MessageBox.Show("Falsche Eingabe!");
+                        break;
+                    }
+                }
+            }           
         }
 
     }

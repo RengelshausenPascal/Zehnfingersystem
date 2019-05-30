@@ -30,16 +30,6 @@ namespace Zehnfingersystem
             set { passwort = value; }
         }
 
-        
-        public void Daten()
-        {
-           
-
-
-
-            
-        }
-
         public bool PasswordConditions()
         {
             
