@@ -10,7 +10,9 @@
         <Label x:Name="lbl_username" Content="USERNAME" HorizontalAlignment="Left" Margin="27,23,0,0" VerticalAlignment="Top" Width="133" Height="39" FontSize="18"/>
         <TextBlock x:Name="txtBlock" HorizontalAlignment="Left" Height="130" Margin="10,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="760"/>
         <TextBox x:Name="txtBox" HorizontalAlignment="Left" Height="125" Margin="9,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="774" KeyDown="txtBox_KeyDown"/>
-        <Label x:Name="lblZeit" Content="" HorizontalAlignment="Left" Height="36" Margin="711,23,0,0" VerticalAlignment="Top" Width="42"/>
+        <Label x:Name="lblZeit" Content="" HorizontalAlignment="Left" Height="36" Margin="609,23,0,0" VerticalAlignment="Top" Width="144"/>
+        <Label x:Name="lbl_punkte" Content="punkte" HorizontalAlignment="Left" Height="36" Margin="208,23,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label x:Name="lbl_fehler" Content="fehler" HorizontalAlignment="Left" Height="36" Margin="286,23,0,0" VerticalAlignment="Top" Width="58"/>
 
     </Grid>
 </Window>

@@ -41,7 +41,7 @@ namespace Zehnfingersystem
 
         private void btn_Registrieren_Click(object sender, RoutedEventArgs e)
         {
-            using (StreamWriter objWriter = new StreamWriter("test.txt", true))
+            using (StreamWriter objWriter = new StreamWriter(@"..\..\test.txt", true))
             {
                 objWriter.Write(name.Text+";");
                 objWriter.Write(textBox_email.Text+";");
@@ -84,7 +84,7 @@ namespace Zehnfingersystem
         private void btn_Login_Click(object sender, RoutedEventArgs e)
         {
 
-            using (StreamReader objReader = new StreamReader("test.txt"))
+            using (StreamReader objReader = new StreamReader(@"..\..\test.txt"))
             {
 
             }
