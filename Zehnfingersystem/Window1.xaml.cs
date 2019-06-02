@@ -29,6 +29,8 @@ namespace Zehnfingersystem
 
             InitializeComponent();
             lbl_username.Content = namee;
+            //img_photo2 = image;
+
 
             //text_ausgeben txtAusgeben = new text_ausgeben();
             //txtAusgeben.auslesen();
@@ -57,7 +59,7 @@ namespace Zehnfingersystem
         }
 
         DispatcherTimer dp = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 1) };
-        DispatcherTimer dp2 = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 10) };
+        DispatcherTimer dp2 = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 5) };
 
 
      
@@ -116,11 +118,9 @@ namespace Zehnfingersystem
             int index = 0;
             int min = Math.Min(ausgabe.Length, einlesen.Length);
             while (index < min && ausgabe[index] == einlesen[index])
-            {
-                index++;
+            {                
                 punkte++;
-                
-               
+                index++;
             }
 
             return (index == min && ausgabe.Length == einlesen.Length) ? -1 : index;
