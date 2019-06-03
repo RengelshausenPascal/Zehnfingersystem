@@ -29,7 +29,7 @@ namespace Zehnfingersystem
             get { return passwort; }
             set { passwort = value; }
         }
-
+        public object Tag { get; set; }
 
         public bool PasswordConditions()
         {

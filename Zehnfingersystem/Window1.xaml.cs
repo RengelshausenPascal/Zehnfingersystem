@@ -24,12 +24,13 @@ namespace Zehnfingersystem
         //private LogIn user;
 
       
-        public Window1(string namee)
+        public Window1(string namee,BitmapImage bitmap)
         {
 
             InitializeComponent();
             lbl_username.Content = namee;
-            //img_photo2 = image;
+
+            img_photo2.Source = bitmap;
 
 
             //text_ausgeben txtAusgeben = new text_ausgeben();

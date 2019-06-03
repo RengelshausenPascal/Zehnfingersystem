@@ -60,9 +60,10 @@ namespace Zehnfingersystem
             lg.Passwort = textBox_passwort.Password;
             lg.Username = name.Text;
             lg.Email = textBox_email.Text;
+            lg.Tag = img_photo.Tag;
             if (lg.PasswordConditions() == true && lg.LogInConditions() == true)
             {
-                w1 = new Window1(name.Text);
+                w1 = new Window1(name.Text,img_photo.Tag as BitmapImage);
                 w1.Show();
 
                 Close();
@@ -105,7 +106,7 @@ namespace Zehnfingersystem
                 if (name.Text == LogInFelder[0] && textBox_passwort.Password == LogInFelder[2])
                 {
                     b_loggedin = true;
-                    w1 = new Window1(name.Text);
+                    w1 = new Window1(name.Text,img_photo.Tag as BitmapImage);
                     w1.Show();
 
                     Close();
@@ -137,6 +138,7 @@ namespace Zehnfingersystem
             if (op.ShowDialog() == true)
             {
                 img_photo.Source = new BitmapImage(new Uri(op.FileName));
+                img_photo.Tag = new BitmapImage(new Uri(op.FileName));
             }
 
 
