@@ -88,7 +88,7 @@ namespace Zehnfingersystem
 
 
             string[] lines = File.ReadAllLines(@"..\..\test.txt");
-            int counter = 0;
+            bool b_loggedin = false;
 
             while (objReader.EndOfStream == false)
             {
@@ -100,7 +100,7 @@ namespace Zehnfingersystem
 
                 if (name.Text == LogInFelder[0] && textBox_passwort.Password == LogInFelder[2])
                 {
-                    counter++;
+                    b_loggedin = true;
                     w1 = new Window1(name.Text);
                     w1.Show();
 
@@ -109,7 +109,7 @@ namespace Zehnfingersystem
                     break;
                 }
             }
-            if (counter == 0)
+            if (b_loggedin == false)
             {
                 foreach (var item in lines)
                 {
