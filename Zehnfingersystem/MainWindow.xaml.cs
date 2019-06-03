@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using Microsoft.Win32;
+
 
 namespace Zehnfingersystem
 {
@@ -21,6 +23,8 @@ namespace Zehnfingersystem
     /// </summary>
     public partial class MainWindow : Window
     {
+
+     
         public MainWindow()
         {
             InitializeComponent();
@@ -120,8 +124,23 @@ namespace Zehnfingersystem
                         break;
                     }
                 }
-            }           
+            }
         }
 
+        private void insert_img_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog op = new OpenFileDialog();
+            op.Title = "Select a picture";
+            op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+              "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+              "Portable Network Graphic (*.png)|*.png";
+            if (op.ShowDialog() == true)
+            {
+                img_photo.Source = new BitmapImage(new Uri(op.FileName));
+            }
+
+
+        }
     }
 }
+
