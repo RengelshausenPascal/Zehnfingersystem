@@ -143,6 +143,25 @@ namespace Zehnfingersystem
 
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string[] erklären = File.ReadAllLines(@"..\..\erklärung.txt", Encoding.Default);
+
+            foreach (var item in erklären)         
+            {
+                MessageBox.Show(item);
+            }
+            
+            
+        }
+
+        private void passwd_löschen_Click(object sender, RoutedEventArgs e)
+        {
+            textBox_passwort.Clear();
+        }
+
+     
     }
 }
 

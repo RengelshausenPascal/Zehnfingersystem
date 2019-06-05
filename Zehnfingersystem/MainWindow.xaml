@@ -14,11 +14,13 @@
         <TextBox x:Name="textBox_email" HorizontalAlignment="Left" Height="23" Margin="288,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button Content="Registrieren" HorizontalAlignment="Left" Margin="269,289,0,0" VerticalAlignment="Top" Width="75" Click="btn_Registrieren_Click"/>
         <Button Content="Login" HorizontalAlignment="Left" Margin="385,289,0,0" VerticalAlignment="Top" Width="75" Click="btn_Login_Click"/>
-    <PasswordBox x:Name="textBox_passwort" HorizontalAlignment="Left" Height="21" Margin="288,164,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Name="btnPasswd" Content="Passwort zeigen" HorizontalAlignment="Left" Height="21" Margin="413,164,0,0" VerticalAlignment="Top" Width="95" Click="Button_Click_1"/>
+        <PasswordBox x:Name="textBox_passwort" HorizontalAlignment="Left" Height="21" Margin="288,164,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Name="btnPasswd" Content="Passwort zeigen" HorizontalAlignment="Left" Height="19" Margin="288,214,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click_1"/>
         <Button x:Name="insert_img" Content="Foto hinzufügen" HorizontalAlignment="Left" Height="46" Margin="631,175,0,0" VerticalAlignment="Top" Width="130" Click="insert_img_Click"/>
         <Image Name="img_photo" Margin="584,10,9.6,250"></Image>
+        <Button x:Name="was_tun" Content="Was muss ich tun" HorizontalAlignment="Left" Height="43" Margin="631,342,0,0" VerticalAlignment="Top" Width="130" Click="Button_Click"/>
+        <Button x:Name="passwd_löschen" Content="Passwort löschen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="288,190,0,0" Click="passwd_löschen_Click" Height="19"/>
 
     </Grid>
-    
+
 </Window>

@@ -1,4 +1,1 @@
-Hallo heute ist ein schönes Wetter%
-Wir sind hochmotiviert%
-Bald ist Wochenende%
-Wir alle freuen uns darauf%
+Hallo heute ist ein schönes Wetter;Alle Schüler der 3bhit sind hochmotiviert;Wir alle freuen uns auf das Wochenende;

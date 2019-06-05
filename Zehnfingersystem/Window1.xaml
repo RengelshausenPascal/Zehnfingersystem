@@ -9,11 +9,13 @@
     <Grid>
         <Label x:Name="lbl_username" Content="USERNAME" HorizontalAlignment="Left" Margin="27,23,0,0" VerticalAlignment="Top" Width="133" Height="39" FontSize="18"/>
         <TextBlock x:Name="txtBlock" HorizontalAlignment="Left" Height="78" Margin="10,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="760"/>
-        <TextBox x:Name="txtBox" HorizontalAlignment="Left" Height="125" Margin="9,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="774"/>
-        <Label x:Name="lblZeit" Content="" HorizontalAlignment="Left" Height="36" Margin="349,23,0,0" VerticalAlignment="Top" Width="144"/>
-        <Label x:Name="lbl_punkte" Content="punkte" HorizontalAlignment="Left" Height="36" Margin="208,23,0,0" VerticalAlignment="Top" Width="58"/>
-        <Label x:Name="lbl_fehler" Content="fehler" HorizontalAlignment="Left" Height="36" Margin="286,23,0,0" VerticalAlignment="Top" Width="58"/>
+        <TextBox x:Name="txtBox" HorizontalAlignment="Left" Height="125" Margin="10,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="774"/>
+        <Label x:Name="lblZeit" Content="" HorizontalAlignment="Left" Height="39" Margin="349,23,0,0" VerticalAlignment="Top" Width="234"/>
+        <Label x:Name="lbl_punkte" Content="" HorizontalAlignment="Left" Height="24" Margin="208,41,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label x:Name="lbl_fehler" Content="" HorizontalAlignment="Left" Height="24" Margin="286,41,0,0" VerticalAlignment="Top" Width="46"/>
         <Image x:Name="img_photo2" Margin="609,10,23.6,286"/>
+        <Label Content="Punkte" HorizontalAlignment="Left" Height="29" Margin="208,7,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label Content="Fehler" HorizontalAlignment="Left" Height="29" Margin="274,7,0,0" VerticalAlignment="Top" Width="58"/>
 
 
     </Grid>
