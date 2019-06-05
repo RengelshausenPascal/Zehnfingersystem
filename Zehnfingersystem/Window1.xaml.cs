@@ -28,20 +28,11 @@ namespace Zehnfingersystem
         {
 
             InitializeComponent();
-            lbl_username.Content = namee;
 
+            lbl_username.Content = namee;
             img_photo2.Source = bitmap;
 
-
-            //text_ausgeben txtAusgeben = new text_ausgeben();
-            //txtAusgeben.auslesen();
-            //txtBlock.Text = txtAusgeben.ausgabe;
-
-            //string[] txtAusgabe =txtAusgeben.ausgabe.Split(' ') ;
-
-
-
-            //auslesen();
+            
             ausgabe();
             einlesen();
             
@@ -54,14 +45,12 @@ namespace Zehnfingersystem
             dp2.Tick += Dp2_Tick;
 
 
-            //Vergleichen();
             DiffersAtIndex(ausgabe(),einlesen());
 
         }
 
         DispatcherTimer dp = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 1) };
-        DispatcherTimer dp2 = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 5) };
-
+        DispatcherTimer dp2 = new DispatcherTimer() { Interval = new TimeSpan(0, 0, 10) };
 
      
         int i = 10;
@@ -73,7 +62,6 @@ namespace Zehnfingersystem
             if (i == 0)
             {
                 i = 10;
-
             }
 
         }
@@ -82,6 +70,7 @@ namespace Zehnfingersystem
         public string einlesen()
         {
             string txtEinlesen = txtBox.Text;
+            //string[] textEinlesen = txtEinlesen.Split('.');
 
             return txtEinlesen;
         }
@@ -99,17 +88,14 @@ namespace Zehnfingersystem
             while (datei.Peek() != -1) //Solange bis Dateiende erreicht
             {
                 line = datei.ReadToEnd(); 
-                line_ = line.Split(new char[] { '%' });
+                line_ = line.Split('%');
                 txtBlock.Text = line_[counter];
-
             }
             
             return "";
 
         }
-
        
-
 
         int punkte = 0;
         int fehler = 0;
@@ -118,9 +104,18 @@ namespace Zehnfingersystem
         {
             int index = 0;
             int min = Math.Min(ausgabe.Length, einlesen.Length);
-            while (index < min && ausgabe[index] == einlesen[index])
-            {                
-                punkte++;
+            while (index < min )
+            {  
+                if(ausgabe[index] == einlesen[index])
+                {
+                    punkte++;
+                }
+                
+                else
+                {
+                    fehler++;
+                }
+
                 index++;
             }
 
@@ -149,140 +144,6 @@ namespace Zehnfingersystem
             ausgeben();
         }
 
-
-        /*
-        public string[] einlesen()
-        {
-            string[] txtEinlesen = txtBox.Text.Split(' ');
-
-            return txtEinlesen;
-        }
-        */
-
-        /*
-        public string[] ausgabe = new string[] { };
-        int zeile = 0;
-        */
-
-        /*
-        public string auslesen()
-        {
-            string[] text_auslesen = File.ReadAllLines(@"..\..\text_ausgabe.txt");
-
-            foreach (var item in text_auslesen)
-            {
-                txtBlock.Text = item;
-            }
-
-            return "";
-        }
-        */
-
-        /*
-        public string auslesen()
-        {
-            using (StreamReader sr = new StreamReader(@"..\..\text_ausgabe.txt"))
-            {
-                string inhalt;
-                if ((inhalt = sr.ReadToEnd()) != null)
-                {
-                    ausgabe = inhalt.Split( '%' );
-                    txtBlock.Text = ausgabe[zeile];
-                    
-                }
-            }
-
-            return "";
-
-        }
-        */
-
-
-        /*
-        string line;
-
-        System.IO.StreamReader file = new System.IO.StreamReader(@"..\..\text_ausgabe.txt");
-        while ((line = file.ReadLine()) != null)
-        {
-            txtBlock.Text = line;
-            //counter++;
-        }
-
-        //dp.Stop();
-        //lblZeit.Content = "Zeit vorbei";
-        */
-        /*
-        string[] text_auslesen = File.ReadAllLines(@"..\..\text_ausgabe.txt");
-
-        foreach (var item in text_auslesen)
-        {
-            txtBlock.Text = item;   
-        }
-
-
-        if (txtBlock.Text.Length==text_auslesen.Length)
-        {
-            dp.Stop();
-            lblZeit.Content = "Zeit vorbei";
-
-            //lbl_punkte.Content = Convert.ToString(punkte);
-            //lbl_punkte.Content = Convert.ToString(fehler);
-
-        }
-
-
-
-        */
-
-
-        /*
-        private void Vergleichen()
-        {
-            MessageBox.Show("Test:" + ausgabe.Length);
-            string[] woerter2 = einlesen();
-            for (int i = 0; i < woerter2.Length; i++)
-            {
-                string wort1 = ausgabe[i];
-                string wort2 = woerter2[i];
-
-                for (int i2 = 0; i2 < wort2.Length; i2++)
-                {
-                    if (wort1[i2] == wort2[i2])
-                    {
-                        punkte++;
-                        
-                    }
-
-                    else
-                    {
-                        fehler++;
-                    }
-                }
-            }
-
-        }
-
-       
-
-        public void ausgeben()
-        {
-
-            zeile++;
-            txtBlock.Text = ausgabe[zeile];
-
-            if (txtBlock.Text == ausgabe[4])
-            {
-                dp.Stop();
-                lblZeit.Content = "Zeit vorbei";
-
-                lbl_punkte.Content = Convert.ToString(punkte);
-                lbl_punkte.Content = Convert.ToString(fehler);
-
-
-            }
-
-        }
-        */
 
     }
 }
