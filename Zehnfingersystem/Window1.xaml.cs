@@ -59,6 +59,11 @@ namespace Zehnfingersystem
             if (i == 0)
             {
                 i = 10;
+                txtBox.TextWrapping = TextWrapping.Wrap;
+                txtBox.AcceptsReturn = true;
+                txtBox.Text += Environment.NewLine;
+                txtBox.SelectionStart = txtBox.Text.Length;
+
             }
 
         }
